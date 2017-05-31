@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<table>
+<tr><td>城市：</td><td>{{ the_results["city"] }}</td></tr>
+<tr><td>温度：</td><td>{{ the_results["wendu"]+"°C" }}</td></tr>
+<tr><td>温馨提示：</td><td>{{ the_results["ganmao"] }}</td></tr>
+</table>
+<table>
+<tr><td>昨日天气</td><td>{{ the_results["yesterday"]["date"] }}</td></tr>
+</table>
+<table>
+<tr><td>天气状况:</td><td>{{ the_results["yesterday"]["type"] }}</td></tr>                        
+<tr><td>高温:</td><td>{{ the_results["yesterday"]["high"] }}</td></tr>
+<tr><td>低温:</td><td>{{ the_results["yesterday"]["low"] }}</td></tr>
+<tr><td>风向:</td><td>{{ the_results["yesterday"]["fx"]+the_results["yesterday"]["fl"] }}</td></tr>
+</table>
+
+<table>
+<tr><td>未来3日天气预报</td></tr>
+</table>
+<table>
+<tr><td>日期:</td><td>{{ the_results["forecast"][1]["date"] }}</td></tr>
+<tr><td>天气状况:</td><td>{{ the_results["forecast"][1]["type"] }}</td></tr>                        
+<tr><td>高温:</td><td>{{ the_results["forecast"][1]["high"] }}</td></tr>
+<tr><td>低温:</td><td>{{ the_results["forecast"][1]["low"] }}</td></tr>
+<tr><td>风向:</td><td>{{ the_results["forecast"][1]["fengxiang"]+the_results["forecast"][1]["fengli"] }}</td></tr>
+<table>
+
+<table>
+<tr><td>日期:</td><td>{{ the_results["forecast"][2]["date"] }}</td></tr>
+<tr><td>天气状况:</td><td>{{ the_results["forecast"][2]["type"] }}</td></tr>                        
+<tr><td>高温:</td><td>{{ the_results["forecast"][2]["high"] }}</td></tr>
+<tr><td>低温:</td><td>{{ the_results["forecast"][2]["low"] }}</td></tr>
+<tr><td>风向:</td><td>{{ the_results["forecast"][2]["fengxiang"]+the_results["forecast"][2]["fengli"] }}</td></tr>
+<table>
+
+<table>
+<tr><td>日期:</td><td>{{ the_results["forecast"][3]["date"] }}</td></tr>
+<tr><td>天气状况:</td><td>{{ the_results["forecast"][3]["type"] }}</td></tr>                        
+<tr><td>高温:</td><td>{{ the_results["forecast"][3]["high"] }}</td></tr>
+<tr><td>低温:</td><td>{{ the_results["forecast"][3]["low"] }}</td></tr>
+<tr><td>风向:</td><td>{{ the_results["forecast"][3]["fengxiang"]+the_results["forecast"][3]["fengli"] }}</td></tr>
+<table>
+
+{% endblock %}
